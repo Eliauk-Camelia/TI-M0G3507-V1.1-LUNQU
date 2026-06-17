@@ -81,16 +81,26 @@ int main(void)
         /* 第二行: Pitch */
         OLED_ShowString(0, 16, "P:");
         angle_split(mpu6050.pitch, &deg_int, &deg_dec);
-        OLED_ShowNumber(16, 16, deg_int, 4, 12);
+        if (deg_int < 0) {
+            OLED_ShowChar(16, 16, '-', 12, 1);
+            OLED_ShowNumber(24, 16, (uint32_t)(-deg_int), 3, 12);
+        } else {
+            OLED_ShowNumber(16, 16, (uint32_t)deg_int, 4, 12);
+        }
         OLED_ShowChar(48, 16, '.', 12, 1);
-        OLED_ShowNumber(56, 16, deg_dec, 1, 12);
+        OLED_ShowNumber(56, 16, (uint32_t)deg_dec, 1, 12);
 
         /* 第三行: Roll */
         OLED_ShowString(0, 32, "R:");
         angle_split(mpu6050.roll, &deg_int, &deg_dec);
-        OLED_ShowNumber(16, 32, deg_int, 4, 12);
+        if (deg_int < 0) {
+            OLED_ShowChar(16, 32, '-', 12, 1);
+            OLED_ShowNumber(24, 32, (uint32_t)(-deg_int), 3, 12);
+        } else {
+            OLED_ShowNumber(16, 32, (uint32_t)deg_int, 4, 12);
+        }
         OLED_ShowChar(48, 32, '.', 12, 1);
-        OLED_ShowNumber(56, 32, deg_dec, 1, 12);
+        OLED_ShowNumber(56, 32, (uint32_t)deg_dec, 1, 12);
 
         /* Yaw 归零 */
         if (yaw_reset_req) { yaw_calibed = 0; yaw_reset_req = 0; }

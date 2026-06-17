@@ -8,12 +8,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 官方资料路径：`/home/arch/Downloads/baidu-downloads/WHEELTEC C07A核心板(Ti-MSPM0G3507)附送资料/`
 
+### 时钟树
+
+SysConfig 配置的完整 PLL 链路（`empty.syscfg`）：
+
+```
+32MHz SYSOSC → PLL(×5) → PLL_PDIV(÷2) → UDIV(÷2) → MCLK=40MHz
+                                                    → CLK2X=80MHz → HSCLKMUX 选择 SYSPLL2X
+```
+
+- **HSCLK (CPU)**：80MHz
+- **10ms 定时器 (TIMG0)**：prescaler=32, period=10ms → `80MHz/32 = 2.5MHz` 时基
+- **PWM (TIMA1)**：80MHz / 8000 = 10kHz
+- **SYSTICK**：period=0xFFFFFF（约 210ms），仅用作 `delay_ms/us` 参考时钟
+
 ## 开发环境
 
 - **IDE**: TI Code Composer Studio (CCS) Theia 20.5.1
 - **编译器**: TI ARM Clang Compiler 4.0.4.LTS (ticlang)
 - **SDK**: MSPM0 SDK 2.10.00.04 (`/home/arch/ti/mspm0_sdk_2_10_00_04/`)
 - **配置工具**: SysConfig 1.26.2 (`/home/arch/ti/sysconfig_1.26.2/`)
+- **LSP/clangd**: `Debug/.clangd/compile_commands.json`（CCS 自动生成，可用 clangd 做代码补全/跳转）
+
+> **注意：** SysConfig 文件头中记录的 `--product "mspm0_sdk@2.01.00.03"` 与实际 SDK 2.10.00.04 不一致，这是 SysConfig 的显示问题，不影响实际构建。
 
 ## 构建
 
@@ -34,12 +51,12 @@ cd Debug
 ├── empty.c                  # 主程序 (MPU6050+OLED+电机+编码器+灰度)
 ├── empty.syscfg             # SysConfig 配置源 (引脚/时钟/外设)
 ├── Hardware/                # 外设驱动层
-│   ├── board.c/h            # 系统时钟、delay、printf→UART0 重定向
+│   ├── board.c/h            # 系统时钟、delay、printf→UART0 重定向 + 全局类型定义 (s32/s16/u8 等 STM32 风格别名)
 │   ├── oled.c/h             # SSD1306 OLED (软件模拟 4 线 SPI)
 │   ├── oledfont.h           # ASCII 字库 (12x6/16x8) + 中文点阵
 │   ├── led.c/h              # 板载 LED (PB9)
 │   ├── motor.c/h            # TB6612 PWM 驱动 + 增量式 PI 速度闭环
-│   ├── encoder.c/h          # MG513 编码器脉冲计数 (GROUP1 中断)
+│   ├── encoder.c/h          # MG513 编码器脉冲计数 (GROUP1 中断, 输出 Get_Encoder_countA/B)
 │   ├── key.c/h              # PA18 按键扫描 (单击启停/长按)
 │   ├── grey.c/h             # 感为灰度传感器 (2 线串行协议)
 │   ├── MPU6050.c/h          # WHEELTEC MPU6050 封装层
@@ -136,7 +153,21 @@ UART_0_INST_IRQHandler     ← 串口接收
     Set_PWM(0, 0)
 ```
 
-`motor.c` 中 `Set_PWM(pwmA, pwmB)`：正值 = 正转，负值 = 反转，范围 ±7999。PWM 频率 10kHz（TIMA1, 8000 计数）。
+`motor.c` 中 `Set_PWM(pwmA, pwmB)`：正值 = 正转，负值 = 反转。
+
+**TB6612 方向控制逻辑（`Set_PWM`）：**
+- 正转 (pwm>0)：AIN1 低、AIN2 高（或 BIN1 低、BIN2 高）
+- 反转 (pwm<0)：AIN1 高、AIN2 低（或 BIN1 高、BIN2 低）
+- PWM 频率 10kHz（TIMA1, 8000 计数），占空比 = `ABS(pwm)/8000`
+
+**增量式 PI 速度闭环参数（`Velocity_A/B`）：**
+- `Velcity_Kp = 1.0`, `Velcity_Ki = 0.4`（位于 `motor.c:2`）
+- PI 输出限幅：**±7000**（不是 8000），防止占空比饱和
+- 当前目标速度：`target = -15`（编码器脉冲/10ms）
+
+**编码器速度换算：**
+- 10ms 定时器中读取 `encoderA_cnt` / `encoderB_cnt`（脉冲增量）
+- MG513 编码器：电机每转 11 个脉冲（减速后），具体取决于减速比
 
 ### 串口协议
 
