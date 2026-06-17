@@ -41,7 +41,7 @@
 #define ti_msp_dl_config_h
 
 #define CONFIG_MSPM0G350X
-#define CONFIG_MSPM0G3507
+#define CONFIG_MSPM0G3505
 
 #if defined(__ti_version__) || defined(__TI_COMPILER_VERSION__)
 #define SYSCONFIG_WEAK __attribute__((weak))
@@ -73,7 +73,70 @@ extern "C" {
 #define POWER_STARTUP_DELAY                                                (16)
 
 
-#define CPUCLK_FREQ                                                     32000000
+
+#define CPUCLK_FREQ                                                     80000000
+/* Defines for SYSPLL_ERR_01 Workaround */
+/* Represent 1.000 as 1000 */
+#define FLOAT_TO_INT_SCALE                                               (1000U)
+#define FCC_EXPECTED_RATIO                                                  2500
+#define FCC_UPPER_BOUND                       (FCC_EXPECTED_RATIO * (1 + 0.003))
+#define FCC_LOWER_BOUND                       (FCC_EXPECTED_RATIO * (1 - 0.003))
+
+bool SYSCFG_DL_SYSCTL_SYSPLL_init(void);
+
+
+/* Defines for UART_0 */
+#define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                           40000000
+#define UART_0_INST_IRQHandler                                  UART0_IRQHandler
+#define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
+#define GPIO_UART_0_RX_PORT                                                GPIOA
+#define GPIO_UART_0_TX_PORT                                                GPIOA
+#define GPIO_UART_0_RX_PIN                                        DL_GPIO_PIN_11
+#define GPIO_UART_0_TX_PIN                                        DL_GPIO_PIN_10
+#define GPIO_UART_0_IOMUX_RX                                     (IOMUX_PINCM22)
+#define GPIO_UART_0_IOMUX_TX                                     (IOMUX_PINCM21)
+#define GPIO_UART_0_IOMUX_RX_FUNC                      IOMUX_PINCM22_PF_UART0_RX
+#define GPIO_UART_0_IOMUX_TX_FUNC                      IOMUX_PINCM21_PF_UART0_TX
+#define UART_0_BAUD_RATE                                                (115200)
+#define UART_0_IBRD_40_MHZ_115200_BAUD                                      (21)
+#define UART_0_FBRD_40_MHZ_115200_BAUD                                      (45)
+
+
+
+
+
+/* Port definition for Pin Group OLED_RST */
+#define OLED_RST_PORT                                                    (GPIOB)
+
+/* Defines for PIN_RST: GPIOB.14 with pinCMx 31 on package pin 2 */
+#define OLED_RST_PIN_RST_PIN                                    (DL_GPIO_PIN_14)
+#define OLED_RST_PIN_RST_IOMUX                                   (IOMUX_PINCM31)
+/* Port definition for Pin Group OLED_DC */
+#define OLED_DC_PORT                                                     (GPIOB)
+
+/* Defines for PIN_DC: GPIOB.15 with pinCMx 32 on package pin 3 */
+#define OLED_DC_PIN_DC_PIN                                      (DL_GPIO_PIN_15)
+#define OLED_DC_PIN_DC_IOMUX                                     (IOMUX_PINCM32)
+/* Port definition for Pin Group OLED_SCL */
+#define OLED_SCL_PORT                                                    (GPIOA)
+
+/* Defines for PIN_SCL: GPIOA.28 with pinCMx 3 on package pin 35 */
+#define OLED_SCL_PIN_SCL_PIN                                    (DL_GPIO_PIN_28)
+#define OLED_SCL_PIN_SCL_IOMUX                                    (IOMUX_PINCM3)
+/* Port definition for Pin Group OLED_SDA */
+#define OLED_SDA_PORT                                                    (GPIOA)
+
+/* Defines for PIN_SDA: GPIOA.31 with pinCMx 6 on package pin 39 */
+#define OLED_SDA_PIN_SDA_PIN                                    (DL_GPIO_PIN_31)
+#define OLED_SDA_PIN_SDA_IOMUX                                    (IOMUX_PINCM6)
+/* Port definition for Pin Group LED */
+#define LED_PORT                                                         (GPIOB)
+
+/* Defines for led: GPIOB.9 with pinCMx 26 on package pin 61 */
+#define LED_led_PIN                                              (DL_GPIO_PIN_9)
+#define LED_led_IOMUX                                            (IOMUX_PINCM26)
+
 
 
 
@@ -84,6 +147,13 @@ void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 
+bool SYSCFG_DL_SYSCTL_SYSPLL_init(void);
+void SYSCFG_DL_UART_0_init(void);
+
+void SYSCFG_DL_SYSTICK_init(void);
+
+bool SYSCFG_DL_saveConfiguration(void);
+bool SYSCFG_DL_restoreConfiguration(void);
 
 #ifdef __cplusplus
 }
