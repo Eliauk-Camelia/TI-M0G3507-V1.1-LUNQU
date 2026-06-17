@@ -3,7 +3,7 @@
    <banner>TI ARM Clang Linker Unix v4.0.4.LTS</banner>
    <copyright>Copyright (c) 1996-2018 Texas Instruments Incorporated</copyright>
    <command_line>/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmlnk -I/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib -o TI-M0G3507-V1.1-LUNQU.out -mTI-M0G3507-V1.1-LUNQU.map -i/home/arch/ti/mspm0_sdk_2_10_00_04/source -i/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU -i/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug/syscfg -i/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib --diag_wrap=off --display_error_number --warn_sections --xml_link_info=TI-M0G3507-V1.1-LUNQU_linkInfo.xml --rom_model ./empty.o ./ti_msp_dl_config.o ./startup_mspm0g350x_ticlang.o ./Hardware/MPU6050.o ./Hardware/board.o ./Hardware/bsp_iic.o ./Hardware/encoder.o ./Hardware/grey.o ./Hardware/inv_mpu.o ./Hardware/inv_mpu_dmp_motion_driver.o ./Hardware/key.o ./Hardware/led.o ./Hardware/motor.o ./Hardware/oled.o -l./device_linker.cmd -ldevice.cmd.genlibs -llibc.a --start-group -llibc++.a -llibc++abi.a -llibc.a -llibsys.a -llibsysbm.a -llibclang_rt.builtins.a -llibclang_rt.profile.a --end-group --cg_opt_level=2</command_line>
-   <link_time>0x6a32aacf</link_time>
+   <link_time>0x6a32abab</link_time>
    <link_errors>0x0</link_errors>
    <output_file>/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug/TI-M0G3507-V1.1-LUNQU.out</output_file>
    <entry_point>
