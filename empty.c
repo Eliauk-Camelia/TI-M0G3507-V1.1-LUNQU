@@ -1,6 +1,7 @@
 /*
- * TI MSPM0G3507 综合例程: MPU6050 + OLED + TB6612电机 + 编码器
- * 按键(PA18)启停电机, OLED显示姿态角和编码器读数
+ * TI MSPM0G3507 综合例程: MPU6050 + OLED + TB6612电机 + 编码器 + 灰度
+ * OLED 四行布局: 状态+灰度 | Pitch | Roll | Yaw+编码器
+ * 按键(PA18)启停电机, 串口协议 Yaw 归零
  */
 
 #include "ti_msp_dl_config.h"
@@ -72,13 +73,22 @@ int main(void)
     {
         int32_t deg_int, deg_dec;
         float   yaw_display;
+        uint8_t grey_val;
 
         memset(OLED_GRAM, 0, 128 * 8 * sizeof(u8));
 
-        /* 第一行: 标题 + 电机状态 */
-        OLED_ShowString(0, 0, Flag_Stop ? "STOP" : "RUN ");
+        /* 读取灰度传感器 (每帧更新) */
+        grey_val = grey_read_digital();
 
-        /* 第二行: Pitch */
+        /* ---- 第一行 (y=0): 状态 + 灰度8路二进制 ---- */
+        OLED_ShowString(0, 0, Flag_Stop ? "STOP" : "RUN ");
+        OLED_ShowString(36, 0, "G:");
+        for (uint8_t i = 0; i < 8; i++) {
+            OLED_ShowChar(48 + i * 6, 0,
+                (grey_val & (1 << i)) ? '1' : '0', 12, 1);
+        }
+
+        /* ---- 第二行 (y=16): Pitch ---- */
         OLED_ShowString(0, 16, "P:");
         angle_split(mpu6050.pitch, &deg_int, &deg_dec);
         if (deg_int < 0) {
@@ -90,7 +100,7 @@ int main(void)
         OLED_ShowChar(48, 16, '.', 12, 1);
         OLED_ShowNumber(56, 16, (uint32_t)deg_dec, 1, 12);
 
-        /* 第三行: Roll */
+        /* ---- 第三行 (y=32): Roll ---- */
         OLED_ShowString(0, 32, "R:");
         angle_split(mpu6050.roll, &deg_int, &deg_dec);
         if (deg_int < 0) {
@@ -112,23 +122,40 @@ int main(void)
         if (yaw_display < 0)    yaw_display += 360;
         if (yaw_display >= 360) yaw_display -= 360;
 
-        /* 第四行: Yaw + 编码器读数 */
+        /* ---- 第四行 (y=48): Yaw + 编码器A/B ---- */
         OLED_ShowString(0, 48, "Y:");
         angle_split(yaw_display, &deg_int, &deg_dec);
-        OLED_ShowNumber(16, 48, deg_int, 4, 12);
-        OLED_ShowChar(48, 48, '.', 12, 1);
-        OLED_ShowNumber(56, 48, deg_dec, 1, 12);
+        OLED_ShowNumber(12, 48, (uint32_t)deg_int, 3, 12);
+        OLED_ShowChar(30, 48, '.', 12, 1);
+        OLED_ShowNumber(36, 48, (uint32_t)deg_dec, 1, 12);
+
+        /* E1: 编码器A (x=48, 最多3位) */
+        OLED_ShowString(48, 48, "E1:");
+        if (encoderA_cnt < 0) {
+            OLED_ShowChar(66, 48, '-', 12, 1);
+            OLED_ShowNumber(72, 48, (uint32_t)(-encoderA_cnt), 2, 12);
+        } else {
+            OLED_ShowNumber(66, 48, (uint32_t)encoderA_cnt, 3, 12);
+        }
+
+        /* E2: 编码器B (x=84, 最多3位) */
+        OLED_ShowString(84, 48, "E2:");
+        if (encoderB_cnt < 0) {
+            OLED_ShowChar(102, 48, '-', 12, 1);
+            OLED_ShowNumber(108, 48, (uint32_t)(-encoderB_cnt), 2, 12);
+        } else {
+            OLED_ShowNumber(102, 48, (uint32_t)encoderB_cnt, 3, 12);
+        }
 
         OLED_Refresh_Gram();
         LED_Flash(50);
 
-        /* 灰度传感器: 每500ms输出一次 */
+        /* 灰度传感器: 每500ms串口输出一次 */
         {
             static uint16_t grey_cnt = 0;
             if (++grey_cnt >= 50) {
                 grey_cnt = 0;
-                uint8_t g = grey_read_digital();
-                printf("Grey:0x%02X\r\n", g);
+                printf("Grey:0x%02X\r\n", grey_val);
             }
         }
 
