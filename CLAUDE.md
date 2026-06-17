@@ -147,7 +147,7 @@ UART_0_INST_IRQHandler     ← 串口接收
 ```
 按键 PA18 单击 → Flag_Stop 取反
   Flag_Stop=0 (运行):
-    10ms 定时器 → Velocity_A/B(target=-15, current=编码器增量)
+    10ms 定时器 → Velocity_A/B(target=+15, current=编码器增量)
     → 增量式 PI 控制器 → Set_PWM(A, B) → TB6612 驱动电机
   Flag_Stop=1 (停止):
     Set_PWM(0, 0)
@@ -163,7 +163,7 @@ UART_0_INST_IRQHandler     ← 串口接收
 **增量式 PI 速度闭环参数（`Velocity_A/B`）：**
 - `Velcity_Kp = 1.0`, `Velcity_Ki = 0.4`（位于 `motor.c:2`）
 - PI 输出限幅：**±7000**（不是 8000），防止占空比饱和
-- 当前目标速度：`target = -15`（编码器脉冲/10ms）
+- 当前目标速度：`target = +15`（编码器脉冲/10ms, 正值=前进）
 
 **编码器速度换算：**
 - 10ms 定时器中读取 `encoderA_cnt` / `encoderB_cnt`（脉冲增量）

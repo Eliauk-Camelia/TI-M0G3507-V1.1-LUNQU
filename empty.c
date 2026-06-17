@@ -170,14 +170,14 @@ void TIMER_0_INST_IRQHandler(void)
         if (DL_TIMER_IIDX_ZERO) {
             Key();  /* 按键扫描 */
 
-            encoderA_cnt = Get_Encoder_countA;
-            encoderB_cnt = -Get_Encoder_countB;
+            encoderA_cnt = -Get_Encoder_countA;
+            encoderB_cnt = Get_Encoder_countB;
             Get_Encoder_countA = Get_Encoder_countB = 0;
 
             if (!Flag_Stop) {
-                /* PI 速度闭环, 目标速度 15 编码器脉冲/10ms */
-                PWMA = -Velocity_A(-15, encoderA_cnt);
-                PWMB = -Velocity_B(-15, encoderB_cnt);
+                /* PI 速度闭环, 目标速度 +15 编码器脉冲/10ms (正值=前进) */
+                PWMA = Velocity_A(15, encoderA_cnt);
+                PWMB = Velocity_B(15, encoderB_cnt);
                 PWMA = limit_PWM(PWMA, -7999, 7999);
                 PWMB = limit_PWM(PWMB, -7999, 7999);
                 Set_PWM(PWMA, PWMB);

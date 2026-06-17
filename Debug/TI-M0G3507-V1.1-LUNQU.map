@@ -1,7 +1,7 @@
 ******************************************************************************
             TI ARM Clang Linker Unix v4.0.4                    
 ******************************************************************************
->> Linked Wed Jun 17 22:14:03 2026
+>> Linked Wed Jun 17 22:20:38 2026
 
 OUTPUT FILE NAME:   <TI-M0G3507-V1.1-LUNQU.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000094a9
@@ -95,9 +95,11 @@ section   page    origin      length       input sections
                   00007fa8    000000b0     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
                   00008058    000000a8     board.o (.text.puts)
                   00008100    000000a4     bsp_iic.o (.text.HW_iic_init)
-                  000081a4    000000a4     empty.o (.text.TIMG0_IRQHandler)
-                  00008248    000000a2     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
-                  000082ea    0000009a     libc.a : memcpy16.S.obj (.text:memcpy)
+                  000081a4    000000a2     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  00008246    00000002                            : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  00008248    000000a0     empty.o (.text.TIMG0_IRQHandler)
+                  000082e8    0000009a     libc.a : memcpy16.S.obj (.text:memcpy)
+                  00008382    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
                   00008384    00000098     board.o (.text.fputs)
                   0000841c    00000098     bsp_iic.o (.text.mpu6050_i2c_sda_unlock)
                   000084b4    00000098     inv_mpu.o (.text.mpu_set_accel_fsr)
@@ -108,7 +110,7 @@ section   page    origin      length       input sections
                   00008784    00000084     ti_msp_dl_config.o (.text.SYSCFG_DL_UART_0_init)
                   00008808    00000084     inv_mpu.o (.text.mpu_write_mem)
                   0000888c    00000082     libclang_rt.builtins.a : divsf3.S.obj (.text.__divsf3)
-                  0000890e    00000002                            : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  0000890e    00000002     libc.a : _lock.c.obj (.text._nop)
                   00008910    00000080     motor.o (.text.Velocity_A)
                   00008990    00000080     motor.o (.text.Velocity_B)
                   00008a10    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
@@ -117,14 +119,14 @@ section   page    origin      length       input sections
                   00008b74    00000068                            : comparedf2.c.obj (.text.__ledf2)
                   00008bdc    00000068     inv_mpu_dmp_motion_driver.o (.text.dmp_set_fifo_rate)
                   00008c44    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text.__aeabi_dcmp)
-                  00008ca6    00000002                            : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
-                  00008ca8    00000062                            : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
+                  00008ca6    00000002     inv_mpu.o (.text.myget_ms)
+                  00008ca8    00000062     libclang_rt.builtins.a : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
                   00008d0a    00000062     libc.a : memset16.S.obj (.text:memset)
                   00008d6c    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
-                  00008dca    00000002     libc.a : _lock.c.obj (.text._nop)
-                  00008dcc    0000005c            : printf.c.obj (.text.printf)
+                  00008dca    00000002     --HOLE-- [fill = 0]
+                  00008dcc    0000005c     libc.a : printf.c.obj (.text.printf)
                   00008e28    00000056     libclang_rt.builtins.a : aeabi_idivmod.S.obj (.text.__aeabi_idivmod)
-                  00008e7e    00000002     inv_mpu.o (.text.myget_ms)
+                  00008e7e    00000002     --HOLE-- [fill = 0]
                   00008e80    00000054     ti_msp_dl_config.o (.text.SYSCFG_DL_I2C_0_init)
                   00008ed4    00000054     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
                   00008f28    00000054     motor.o (.text.Set_PWM)
@@ -346,10 +348,10 @@ MODULE SUMMARY
        ------                         ----    -------   -------
     ./
        ti_msp_dl_config.o             1716    88        188    
-       empty.o                        1756    107       49     
+       empty.o                        1752    107       49     
        startup_mspm0g350x_ticlang.o   6       192       0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         3478    387       237    
+       Total:                         3474    387       237    
                                                                
     ./Hardware/
        oled.o                         12204   2660      1024   
@@ -440,7 +442,7 @@ MODULE SUMMARY
        Stack:                         0       0         512    
        Linker Generated:              0       141       0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   38606   7188      2249   
+       Grand Total:                   38602   7188      2249   
 
 
 LINKER GENERATED COPY TABLES
@@ -554,7 +556,7 @@ address   name
 000064a3  SysTick_Handler                      
 000064a3  TIMA0_IRQHandler                     
 000064a3  TIMA1_IRQHandler                     
-000081a5  TIMG0_IRQHandler                     
+00008249  TIMG0_IRQHandler                     
 000064a3  TIMG12_IRQHandler                    
 000064a3  TIMG6_IRQHandler                     
 000064a3  TIMG7_IRQHandler                     
@@ -623,9 +625,9 @@ ffffffff  __TI_prof_data_start
 00007979  __aeabi_fsub                         
 0000918d  __aeabi_i2f                          
 00008e29  __aeabi_idiv                         
-0000890f  __aeabi_idiv0                        
+00008247  __aeabi_idiv0                        
 00008e29  __aeabi_idivmod                      
-00008ca7  __aeabi_ldiv0                        
+00008383  __aeabi_ldiv0                        
 0000963d  __aeabi_ldivmod                      
 00009561  __aeabi_llsl                         
 000094f9  __aeabi_lmul                         
@@ -678,11 +680,11 @@ UNDEFED   __mpu_init
 00006311  __subdf3                             
 00007979  __subsf3                             
 00008b01  __truncdfsf2                         
-00008249  __udivmoddi4                         
+000081a5  __udivmoddi4                         
 000094a9  _c_int00_noargs                      
 20200530  _ftable                              
 20200698  _lock                                
-00008dcb  _nop                                 
+0000890f  _nop                                 
 UNDEFED   _system_post_cinit                   
 0000979d  _system_pre_init                     
 2020069c  _unlock                              
@@ -721,7 +723,7 @@ ffffffff  binit
 000095f1  limit_PWM                            
 00003ea1  main                                 
 0000951d  memccpy                              
-000082eb  memcpy                               
+000082e9  memcpy                               
 00008d0b  memset                               
 2020064c  mpu6050                              
 0000841d  mpu6050_i2c_sda_unlock               
@@ -743,7 +745,7 @@ ffffffff  binit
 000073fd  mpu_set_sensors                      
 00008809  mpu_write_mem                        
 000077b9  mspm0_i2c_read                       
-00008e7f  myget_ms                             
+00008ca7  myget_ms                             
 0000a986  oled_asc2_1206                       
 0000a396  oled_asc2_1608                       
 00008dcd  printf                               
@@ -864,9 +866,11 @@ address   name
 00007e39  dmp_set_accel_bias                   
 00007fa9  SYSCFG_DL_SYSCTL_init                
 00008059  puts                                 
-000081a5  TIMG0_IRQHandler                     
-00008249  __udivmoddi4                         
-000082eb  memcpy                               
+000081a5  __udivmoddi4                         
+00008247  __aeabi_idiv0                        
+00008249  TIMG0_IRQHandler                     
+000082e9  memcpy                               
+00008383  __aeabi_ldiv0                        
 00008385  fputs                                
 0000841d  mpu6050_i2c_sda_unlock               
 000084b5  mpu_set_accel_fsr                    
@@ -879,7 +883,7 @@ address   name
 00008809  mpu_write_mem                        
 0000888d  __aeabi_fdiv                         
 0000888d  __divsf3                             
-0000890f  __aeabi_idiv0                        
+0000890f  _nop                                 
 00008911  Velocity_A                           
 00008991  Velocity_B                           
 00008a11  __TI_decompress_lzss                 
@@ -898,7 +902,7 @@ address   name
 00008c6d  __aeabi_dcmple                       
 00008c81  __aeabi_dcmpge                       
 00008c95  __aeabi_dcmpgt                       
-00008ca7  __aeabi_ldiv0                        
+00008ca7  myget_ms                             
 00008ca9  __aeabi_fcmpeq                       
 00008cbd  __aeabi_fcmplt                       
 00008cd1  __aeabi_fcmple                       
@@ -906,11 +910,9 @@ address   name
 00008cf9  __aeabi_fcmpgt                       
 00008d0b  memset                               
 00008d6d  DL_I2C_fillControllerTXFIFO          
-00008dcb  _nop                                 
 00008dcd  printf                               
 00008e29  __aeabi_idiv                         
 00008e29  __aeabi_idivmod                      
-00008e7f  myget_ms                             
 00008e81  SYSCFG_DL_I2C_0_init                 
 00008ed5  SYSCFG_DL_initPower                  
 00008f29  Set_PWM                              
