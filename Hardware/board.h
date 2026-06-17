@@ -5,6 +5,10 @@
 #include "ti_msp_dl_config.h"
 #include "oled.h"
 #include "led.h"
+#include "motor.h"
+#include "encoder.h"
+#include "key.h"
+extern int Flag_Stop;
 #define ABS(a)      (a>0 ? a:(-a))
 typedef int32_t  s32;
 typedef int16_t s16;

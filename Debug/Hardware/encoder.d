@@ -1,6 +1,6 @@
 # FIXED
 
-Hardware/oled.o: ../Hardware/oled.c ../Hardware/oled.h \
+Hardware/encoder.o: ../Hardware/encoder.c ../Hardware/encoder.h \
  ti_msp_dl_config.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h \
@@ -84,9 +84,9 @@ Hardware/oled.o: ../Hardware/oled.c ../Hardware/oled.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
- ../Hardware/board.h ../Hardware/led.h ../Hardware/motor.h \
- ../Hardware/encoder.h ../Hardware/key.h ../Hardware/oledfont.h
-../Hardware/oled.h:
+ ../Hardware/board.h ../Hardware/oled.h ../Hardware/led.h \
+ ../Hardware/motor.h ../Hardware/key.h
+../Hardware/encoder.h:
 ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h:
@@ -171,8 +171,7 @@ ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
 ../Hardware/board.h:
+../Hardware/oled.h:
 ../Hardware/led.h:
 ../Hardware/motor.h:
-../Hardware/encoder.h:
 ../Hardware/key.h:
-../Hardware/oledfont.h:

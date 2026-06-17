@@ -1,6 +1,6 @@
 # FIXED
 
-empty.o: ../empty.c ../Hardware/board.h \
+empty.o: ../empty.c \
  ti_msp_dl_config.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h \
@@ -84,8 +84,11 @@ empty.o: ../empty.c ../Hardware/board.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
- ../Hardware/oled.h ../Hardware/led.h
-../Hardware/board.h:
+ ../Hardware/board.h ../Hardware/oled.h ../Hardware/led.h \
+ ../Hardware/motor.h ../Hardware/encoder.h ../Hardware/key.h \
+ ../Hardware/bsp_siic.h ../Hardware/MPU6050.h ../Hardware/inv_mpu.h \
+ ../Hardware/inv_mpu_dmp_motion_driver.h ../Hardware/dmpKey.h \
+ ../Hardware/dmpmap.h
 ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h:
@@ -169,5 +172,15 @@ ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
+../Hardware/board.h:
 ../Hardware/oled.h:
 ../Hardware/led.h:
+../Hardware/motor.h:
+../Hardware/encoder.h:
+../Hardware/key.h:
+../Hardware/bsp_siic.h:
+../Hardware/MPU6050.h:
+../Hardware/inv_mpu.h:
+../Hardware/inv_mpu_dmp_motion_driver.h:
+../Hardware/dmpKey.h:
+../Hardware/dmpmap.h:

@@ -1,27 +1,62 @@
 [
    {
       "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
-      "command"   : "clang++ -D__MSPM0G3505__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
       "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/empty.c"
    },
    {
       "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
-      "command"   : "clang++ -D__MSPM0G3505__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
-      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug/ti_msp_dl_config.c"
-   },
-   {
-      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
-      "command"   : "clang++ -D__MSPM0G3505__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
       "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/board.c"
    },
    {
       "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
-      "command"   : "clang++ -D__MSPM0G3505__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
       "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/led.c"
    },
    {
       "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
-      "command"   : "clang++ -D__MSPM0G3505__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
       "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/oled.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/MPU6050.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/bsp_iic.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/inv_mpu.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/inv_mpu_dmp_motion_driver.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug/ti_msp_dl_config.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/encoder.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/key.c"
+   },
+   {
+      "directory" : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -D__USE_SYSCONFIG__ -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU\" -I\"/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Debug\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include\" -I\"/home/arch/ti/mspm0_sdk_2_10_00_04/source\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c++/v1\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/lib/clang/18/include\" -isystem\"/opt/ccstudio/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c\" -xc",
+      "file"      : "/home/arch/work-space/ti-space/TI-M0G3507-V1.1-LUNQU/Hardware/motor.c"
    }
 ]
