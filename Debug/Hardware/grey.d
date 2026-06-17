@@ -1,6 +1,6 @@
 # FIXED
 
-Hardware/encoder.o: ../Hardware/encoder.c ../Hardware/encoder.h \
+Hardware/grey.o: ../Hardware/grey.c \
  ti_msp_dl_config.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h \
@@ -84,9 +84,7 @@ Hardware/encoder.o: ../Hardware/encoder.c ../Hardware/encoder.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
- ../Hardware/board.h ../Hardware/oled.h ../Hardware/led.h \
- ../Hardware/motor.h ../Hardware/key.h ../Hardware/grey.h
-../Hardware/encoder.h:
+ ../Hardware/grey.h
 ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h:
@@ -170,9 +168,4 @@ ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
-../Hardware/board.h:
-../Hardware/oled.h:
-../Hardware/led.h:
-../Hardware/motor.h:
-../Hardware/key.h:
 ../Hardware/grey.h:

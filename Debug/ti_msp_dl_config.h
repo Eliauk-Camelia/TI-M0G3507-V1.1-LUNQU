@@ -240,6 +240,15 @@ bool SYSCFG_DL_SYSCTL_SYSPLL_init(void);
 #define ENCODERB_E2B_IIDX                                   (DL_GPIO_IIDX_DIO24)
 #define ENCODERB_E2B_PIN                                        (DL_GPIO_PIN_24)
 #define ENCODERB_E2B_IOMUX                                       (IOMUX_PINCM52)
+/* Port definition for Pin Group Grey */
+#define Grey_PORT                                                        (GPIOA)
+
+/* Defines for AD0: GPIOA.24 with pinCMx 54 on package pin 25 */
+#define Grey_AD0_PIN                                            (DL_GPIO_PIN_24)
+#define Grey_AD0_IOMUX                                           (IOMUX_PINCM54)
+/* Defines for DAT: GPIOA.27 with pinCMx 60 on package pin 31 */
+#define Grey_DAT_PIN                                            (DL_GPIO_PIN_27)
+#define Grey_DAT_IOMUX                                           (IOMUX_PINCM60)
 
 
 

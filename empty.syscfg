@@ -20,6 +20,7 @@ const GPIO8   = GPIO.addInstance();  // BIN dir   PA16,PA17
 const GPIO9   = GPIO.addInstance();  // ENCODERA  PA25,PA26
 const GPIO10  = GPIO.addInstance();  // ENCODERB  PB20,PB24
 const GPIO11  = GPIO.addInstance();  // KEY       PA18
+const GPIO12  = GPIO.addInstance();  // Grey      PA24(CLK)+PA27(DAT)
 const I2C     = scripting.addModule("/ti/driverlib/I2C", {}, false);
 const I2C1    = I2C.addInstance();
 const PWM     = scripting.addModule("/ti/driverlib/PWM", {}, false);
@@ -131,6 +132,15 @@ GPIO11.$name                         = "KEY";
 GPIO11.associatedPins[0].$name       = "key";
 GPIO11.associatedPins[0].direction   = "INPUT";
 GPIO11.associatedPins[0].pin.$assign = "PA18";
+
+// ---- 灰度传感器 (感为 Grey, 2线串行) ----
+GPIO12.$name                         = "Grey";
+GPIO12.associatedPins.create(2);
+GPIO12.associatedPins[0].$name       = "AD0";      /* CLK, PA24 */
+GPIO12.associatedPins[0].pin.$assign = "PA24";
+GPIO12.associatedPins[1].$name       = "DAT";      /* DAT, PA27 */
+GPIO12.associatedPins[1].direction   = "INPUT";
+GPIO12.associatedPins[1].pin.$assign = "PA27";
 
 // ---- 硬件I2C0: MPU6050 ----
 I2C1.$name                           = "I2C_0";

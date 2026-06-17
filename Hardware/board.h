@@ -8,6 +8,7 @@
 #include "motor.h"
 #include "encoder.h"
 #include "key.h"
+#include "grey.h"
 extern int Flag_Stop;
 #define ABS(a)      (a>0 ? a:(-a))
 typedef int32_t  s32;

@@ -5,6 +5,7 @@
 "./Hardware/board.o"
 "./Hardware/bsp_iic.o"
 "./Hardware/encoder.o"
+"./Hardware/grey.o"
 "./Hardware/inv_mpu.o"
 "./Hardware/inv_mpu_dmp_motion_driver.o"
 "./Hardware/key.o"

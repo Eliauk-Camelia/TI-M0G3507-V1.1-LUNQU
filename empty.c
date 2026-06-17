@@ -64,6 +64,10 @@ int main(void)
 
     printf("Motor Init OK!\r\n");
 
+    /* ---- 灰度传感器 ---- */
+    grey_init();
+    printf("Grey Init OK!\r\n");
+
     while (1)
     {
         int32_t deg_int, deg_dec;
@@ -107,6 +111,17 @@ int main(void)
 
         OLED_Refresh_Gram();
         LED_Flash(50);
+
+        /* 灰度传感器: 每500ms输出一次 */
+        {
+            static uint16_t grey_cnt = 0;
+            if (++grey_cnt >= 50) {
+                grey_cnt = 0;
+                uint8_t g = grey_read_digital();
+                printf("Grey:0x%02X\r\n", g);
+            }
+        }
+
         delay_ms(10);
     }
 }

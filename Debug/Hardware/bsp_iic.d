@@ -85,7 +85,8 @@ Hardware/bsp_iic.o: ../Hardware/bsp_iic.c ../Hardware/bsp_siic.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
  /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
  ../Hardware/board.h ../Hardware/oled.h ../Hardware/led.h \
- ../Hardware/motor.h ../Hardware/encoder.h ../Hardware/key.h
+ ../Hardware/motor.h ../Hardware/encoder.h ../Hardware/key.h \
+ ../Hardware/grey.h
 ../Hardware/bsp_siic.h:
 ti_msp_dl_config.h:
 /home/arch/ti/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h:
@@ -176,3 +177,4 @@ ti_msp_dl_config.h:
 ../Hardware/motor.h:
 ../Hardware/encoder.h:
 ../Hardware/key.h:
+../Hardware/grey.h:
