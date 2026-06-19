@@ -1,0 +1,38 @@
+# ========== 编译输出目录 ==========
+Debug/
+Release/
+build/
+
+# ========== 编译中间与二进制文件 ==========
+*.o
+*.obj
+*.out
+*.elf
+*.map
+*.d
+*.dep
+*.lst
+*.a
+*.lib
+*.bin
+*.hex
+
+# ========== TI CCS IDE 临时缓存与用户配置 ==========
+.settings/
+*.launch
+*.log
+*.prefs
+*.tmp
+*.bak
+
+# ========== 编辑器与系统临时文件 ==========
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ========== 工具私有配置 ==========
+CLAUDE.md
+README.html

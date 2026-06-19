@@ -39,7 +39,7 @@
 2. 点击 **Debug** 烧录并启动调试（XDS110 SWD 模式）
 3. **不要用 ST-Link 或 Uniflash BSL 模式烧录**
 
-> SysConfig 1.26.2 不直接支持 MSPM0G3507 器件，项目用 `--board "/ti/boards/LP_MSPM0G3507"` 替代。详见 `CLAUDE.md`。
+> SysConfig 1.26.2 不直接支持 MSPM0G3507 器件，项目用 `--board "/ti/boards/LP_MSPM0G3507"` 替代。
 
 ## 串口协议
 
@@ -77,6 +77,13 @@
 
 ## 参考
 
-- 官方资料：`~/Downloads/baidu-downloads/WHEELTEC C07A核心板(Ti-MSPM0G3507)附送资料/`
-- 轮趣科技：https://wheeltec.net
-- 详细开发说明见 `CLAUDE.md`
+- 轮趣科技 WHEELTEC C07A 核心板官方资料
+- 轮趣科技官网：https://wheeltec.net
+
+## 演示
+
+> TODO: 添加实物照片 / 演示视频 / 接线图
+
+## License
+
+MIT © 2026 Eliauk-Camelia
